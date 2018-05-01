@@ -265,7 +265,36 @@ function PrefsDialog(remote) {
 			if (key === 'blocklist-size')
 			{
 				// special case -- regular text area
-				e.text('' + val.toStringWithCommas());
+/* 				e.text(' ' + val.toStringWithCommas()); */
+				var CountOfRules = val.toStringWithCommas();// в этой переменной храниться количесвто правил
+				// определения правильного падежа для слова правило
+				if((CountOfRules > 4) && (CountOfRules < 21) || (CountOfRules == 0)){
+					e.text(CountOfRules + ' правил');
+				}
+				else{
+					if(CountOfRules == 1){
+						e.text(CountOfRules + ' правило');
+					}
+					else if(CountOfRules == 0){
+						e.text(CountOfRules + ' правил');
+					}
+					else if((CountOfRules > 1) && (CountOfRules < 5)){
+						e.text(CountOfRules + ' правила');
+					}
+					else if((CountOfRules > 20) && (CountOfRules % 10 == 1)){
+						e.text(CountOfRules + ' правило');
+					}
+					else if((CountOfRules > 20) && (CountOfRules % 10 == 0)){
+						e.text(CountOfRules + ' правил');
+					}
+					else if((CountOfRules > 20) && (CountOfRules % 10 < 5)){
+						e.text(CountOfRules + ' правила');
+					}
+					else if((CountOfRules > 20) && (CountOfRules % 10 > 5)){
+						e.text(CountOfRules + ' правил');
+					}
+				}
+				// конец определения правильного падежа
 			}
 			else switch (e[0].type)
 			{

@@ -195,7 +195,7 @@ Transmission.fmt = (function()
 			    s = seconds + ' ' + (seconds > 1 ? 'seconds' : 'second'); */
 				// начало определений падежей
 				// определение необходимого падежа для дней
-				if((days > 4) && (days < 21)){
+				if((days > 4) && (days < 21) || (days == 0)){
 						d = days + ' дней';
 				}
 				else{
@@ -219,7 +219,7 @@ Transmission.fmt = (function()
 					}
 				}
 				// определение необходимого падежа для часов
-				if((hours > 4) && (hours < 21)){
+				if((hours > 4) && (hours < 21) || (hours == 0)){
 					h = hours + ' часов';
 				}
 				else{
@@ -243,7 +243,7 @@ Transmission.fmt = (function()
 					}
 				}
 				// определение необходимого падежа для минут
-				if((minutes > 4) && (minutes < 21)){
+				if((minutes > 4) && (minutes < 21) || (minutes == 0)){
 					m = minutes + ' минут';
 				}
 				else{
@@ -267,7 +267,7 @@ Transmission.fmt = (function()
 					}
 				}
 				// определение необходимого падежа для секунд
-				if((seconds > 4) && (seconds < 21)){
+				if((seconds > 4) && (seconds < 21) || (seconds == 0)){
 					s = seconds + ' секунд';
 				}
 				else{

@@ -12,7 +12,7 @@ $(document).ready(function () {
 	updateMenuTitle();
 	$(transmission).bind('downloadComplete seedingComplete', function (event, torrent) {
 		if (notificationsEnabled) {
-		var title = (event.type == 'downloadComplete' ? 'Download' : 'Seeding') + ' complete',
+		var title = (event.type == 'downloadComplete' ? 'Загрузка' : 'Раздача') + ' завершено',
 			content = torrent.getName(),
 			notification;
 

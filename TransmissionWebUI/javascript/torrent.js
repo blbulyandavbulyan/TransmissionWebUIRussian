@@ -268,16 +268,16 @@ Torrent.prototype =
 	getPercentDone: function() { return this.fields.percentDone; },
 	getStateString: function() {
 		switch(this.getStatus()) {
-			case Torrent._StatusStopped:        return this.isFinished() ? 'Seeding complete' : 'Paused';
-			case Torrent._StatusCheckWait:      return 'Queued for verification';
-			case Torrent._StatusCheck:          return 'Verifying local data';
-			case Torrent._StatusDownloadWait:   return 'Queued for download';
-			case Torrent._StatusDownload:       return 'Downloading';
-			case Torrent._StatusSeedWait:       return 'Queued for seeding';
-			case Torrent._StatusSeed:           return 'Seeding';
+			case Torrent._StatusStopped:        return this.isFinished() ? 'Раздача завершена' : 'Приостановлено';
+			case Torrent._StatusCheckWait:      return 'В очереди на проверку';
+			case Torrent._StatusCheck:          return 'Проверка локальных данных';
+			case Torrent._StatusDownloadWait:   return 'В очереди на загрузку';
+			case Torrent._StatusDownload:       return 'Загрузка';
+			case Torrent._StatusSeedWait:       return 'В очереди на раздачу';
+			case Torrent._StatusSeed:           return 'Раздача';
 			case null:
-			case undefined:                     return 'Unknown';
-			default:                            return 'Error';
+			case undefined:                     return 'Неизвестно';
+			default:                            return 'Ошибка';
 		}
 	},
 	seedRatioLimit: function(controller){
