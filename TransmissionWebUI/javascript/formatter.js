@@ -195,7 +195,7 @@ Transmission.fmt = (function()
 			    s = seconds + ' ' + (seconds > 1 ? 'seconds' : 'second'); */
 				// начало определений падежей
 				// определение необходимого падежа для дней
-				if((days > 4) && (days < 21) || (days == 0)){
+/* 				if((days > 4) && (days < 21) || (days == 0)){
 						d = days + ' дней';
 				}
 				else{
@@ -220,9 +220,21 @@ Transmission.fmt = (function()
 					else{
 						d = days + ' дней'
 					}
+				} */
+				if(((days > 4) && (days < 21)) || (days == 0) || ((days > 20) && (days % 10 == 0)) || ((days > 20) && (days % 10 > 5))){
+					d = days + ' дней';
+				}
+				else if((days == 1) || ((days > 20) && (days % 10 == 1))){
+					d = days + ' день';
+				}
+				else if(((days > 1) && (days < 5)) || ((days > 20) && (days % 10 < 5))){
+					d = days + ' дня';
+				}
+				else{
+					d = days + ' день'
 				}
 				// определение необходимого падежа для часов
-				if((hours > 4) && (hours < 21) || (hours == 0)){
+	/* 			if((hours > 4) && (hours < 21) || (hours == 0)){
 					h = hours + ' часов';
 				}
 				else{
@@ -247,9 +259,21 @@ Transmission.fmt = (function()
 					else {
 						h = hours + ' часов'
 					}
+				} */
+				if(((hours > 4) && (hours < 21)) || (hours == 0) || ((hours > 20) && (hours % 10 == 0)) || ((hours > 20) && (hours % 10 > 5))){
+					h = hours + ' часов';
+				}
+				else if((hours == 1) || ((hours > 20) && (hours % 10 == 1))){
+					h = hours + ' час';
+				}
+				else if(((hours > 1) && (hours < 5)) || ((hours > 20) && (hours % 10 < 5))){
+					h = hours + ' часа';
+				}
+				else{
+					h = hours + ' час'
 				}
 				// определение необходимого падежа для минут
-				if((minutes > 4) && (minutes < 21) || (minutes == 0)){
+/* 				if((minutes > 4) && (minutes < 21) || (minutes == 0)){
 					m = minutes + ' минут';
 				}
 				else{
@@ -274,33 +298,31 @@ Transmission.fmt = (function()
 					else{
 						m = minutes + ' минут'
 					}
+				} */
+				if(((minutes > 4) && (minutes < 21)) || (minutes == 0) || ((minutes > 20) && (minutes % 10 == 0)) || ((minutes > 20) && (minutes % 10 > 5))){
+					m = minutes + ' минут';
 				}
-				// определение необходимого падежа для секунд
-				if((seconds > 4) && (seconds < 21) || (seconds == 0)){
-					s = seconds + ' секунд';
+				else if((minutes == 1) || ((minutes > 20) && (minutes % 10 == 1))){
+					m = minutes + ' минута';
+				}
+				else if(((minutes > 1) && (minutes < 5)) || ((minutes > 20) && (minutes % 10 < 5))){
+					m = minutes + ' минуты';
 				}
 				else{
-					if(seconds == 1){
-						s = seconds + ' секунда';
-					}
-					else if((seconds > 1) && (seconds < 5)){
-						s = seconds + ' секунды';
-					}
-					else if((seconds > 20) && (seconds % 10 == 1)){
-						s = seconds + ' секунда';
-					}
-					else if((seconds > 20) && (seconds % 10 == 0)){
-						s = seconds + ' секунд';
-					}
-					else if((seconds > 20) && (seconds % 10 < 5)){
-						s = seconds + ' секунды';
-					}
-					else if((seconds > 20) && (seconds % 10 > 5)){
-						s = seconds + ' секунд';
-					}
-					else{
-						s = second + ' секунд'
-					}
+					m = minutes + ' минут'
+				}
+				// определение необходимого падежа для секунд
+				if(((seconds > 4) && (seconds < 21)) || (seconds == 0) || ((seconds > 20) && (seconds % 10 == 0)) || ((seconds > 20) && (seconds % 10 > 5))){
+					s = seconds + ' секунд';
+				}
+				else if((seconds == 1) || ((seconds > 20) && (seconds % 10 == 1))){
+					s = seconds + ' секунда';
+				}
+				else if(((seconds > 1) && (seconds < 5)) || ((seconds > 20) && (seconds % 10 < 5))){
+					s = seconds + ' секунды';
+				}
+				else{
+					s = seconds + ' секунд'
 				}
 				// конец определений падежей
 			if (days) {
