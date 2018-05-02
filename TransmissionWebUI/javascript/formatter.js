@@ -217,6 +217,9 @@ Transmission.fmt = (function()
 					else if((days > 20) && (days % 10 > 5)){
 						d = days + ' дней';
 					}
+					else{
+						d = days + ' дней'
+					}
 				}
 				// определение необходимого падежа для часов
 				if((hours > 4) && (hours < 21) || (hours == 0)){
@@ -240,6 +243,9 @@ Transmission.fmt = (function()
 					}
 					else if((hours > 20) && (hours % 10 > 5)){
 						h = hours + ' часов';
+					}
+					else {
+						h = hours + ' часов'
 					}
 				}
 				// определение необходимого падежа для минут
@@ -265,6 +271,9 @@ Transmission.fmt = (function()
 					else if((minutes > 20) && (minutes % 10 > 5)){
 						m = minutes + ' минут';
 					}
+					else{
+						m = minutes + ' минут'
+					}
 				}
 				// определение необходимого падежа для секунд
 				if((seconds > 4) && (seconds < 21) || (seconds == 0)){
@@ -288,6 +297,9 @@ Transmission.fmt = (function()
 					}
 					else if((seconds > 20) && (seconds % 10 > 5)){
 						s = seconds + ' секунд';
+					}
+					else{
+						s = second + ' секунд'
 					}
 				}
 				// конец определений падежей
@@ -385,13 +397,13 @@ Transmission.fmt = (function()
 				switch (flag)
 				{
 					case "O": explanation = "Optimistic unchoke"; break;
-					case "D": explanation = "Downloading from this peer"; break;
+					case "D": explanation = "Загрузка с этого пира"; break;
 					case "d": explanation = "We would download from this peer if they'd let us"; break;
 					case "U": explanation = "Uploading to peer"; break;
 					case "u": explanation = "We would upload to this peer if they'd ask"; break;
 					case "K": explanation = "Peer has unchoked us, but we're not interested"; break;
 					case "?": explanation = "We unchoked this peer, but they're not interested"; break;
-					case "E": explanation = "Encrypted Connection"; break;
+					case "E": explanation = "Зашифрованное соединение"; break;
 					case "H": explanation = "Peer was discovered through Distributed Hash Table (DHT)"; break;
 					case "X": explanation = "Peer was discovered through Peer Exchange (PEX)"; break;
 					case "I": explanation = "Peer is an incoming connection"; break;

@@ -254,10 +254,10 @@ TorrentRendererFull.prototype =
 			c.push(' - ');
 			var eta = t.getETA();
 			if (eta < 0 || eta >= (999*60*60) /* arbitrary */)
-				c.push('remaining time unknown');
+				c.push('оставшееся время неизвестно');
 			else
 				c.push(Transmission.fmt.timeInterval(t.getETA()),
-				       ' remaining');
+				       ' осталось');
 		}
 
 		return c.join('');

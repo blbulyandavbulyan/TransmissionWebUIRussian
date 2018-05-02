@@ -293,6 +293,9 @@ function PrefsDialog(remote) {
 					else if((CountOfRules > 20) && (CountOfRules % 10 > 5)){
 						e.text(CountOfRules + ' правил');
 					}
+					else{
+						e.text(CountOfRules + ' правил')
+					}
 				}
 				// конец определения правильного падежа
 			}

@@ -607,17 +607,17 @@ function Inspector(controller) {
 			html.push('<table class="peer_list">',
 			          '<tr class="inspector_peer_entry even">',
 			          '<th class="encryptedCol"></th>',
-			          '<th class="upCol">Up</th>',
-			          '<th class="downCol">Down</th>',
+			          '<th class="upCol">Отгрузка</th>',
+			          '<th class="downCol">Загрузка</th>',
 			          '<th class="percentCol">%</th>',
-			          '<th class="statusCol">Status</th>',
-			          '<th class="addressCol">Address</th>',
-			          '<th class="clientCol">Client</th>',
+			          '<th class="statusCol">Статус</th>',
+			          '<th class="addressCol">Адрес</th>',
+			          '<th class="clientCol">Клиент</th>',
 			          '</tr>');
 			for (i=0; peer=peers[i]; ++i) {
 				parity = (i%2) ? 'odd' : 'even';
 				html.push('<tr class="inspector_peer_entry ', parity, '">',
-				          '<td>', (peer.isEncrypted ? '<div class="encrypted-peer-cell" title="Encrypted Connection">'
+				          '<td>', (peer.isEncrypted ? '<div class="encrypted-peer-cell" title="Зашифрованное соединение">'
 				                                    : '<div class="unencrypted-peer-cell">'), '</div>', '</td>',
 				          '<td>', (peer.rateToPeer ? fmt.speedBps(peer.rateToPeer) : ''), '</td>',
 				          '<td>', (peer.rateToClient ? fmt.speedBps(peer.rateToClient) : ''), '</td>',
