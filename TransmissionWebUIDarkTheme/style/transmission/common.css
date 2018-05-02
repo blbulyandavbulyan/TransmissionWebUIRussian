@@ -991,11 +991,11 @@ div.dialog_container {
   width: 100%;
   height: 100%;
   text-align: center;
-  color: black;
+  color: white;
   font-size: 1.1em; }
 
 div.dialog_container div.dialog_window {
-  background-color: #eee;
+  background-color: #4a4949;
   margin: 0 auto;
   opacity: .95;
   border-top: none;
@@ -1038,7 +1038,7 @@ div.dialog_container div.dialog_window a {
   float: right;
   margin: 22px 20px 10px -8px;
   padding: 5px;
-  background-color: #EEE;
+  background-color: #4a4949;
   border: 1px solid #787878;
   width: 66px;
   height: 15px;
@@ -1049,7 +1049,6 @@ div.dialog_container div.dialog_window a {
   -webkit-appearance: button;
   font: -webkit-control;
   cursor: default; }
-
 div.dialog_container div.dialog_window a:hover,
 div.dialog_container div.dialog_window a:active {
   background: #c0c8d6 url("images/filter_bar.png") bottom repeat-x; }

@@ -268,15 +268,12 @@ function PrefsDialog(remote) {
 /* 				e.text(' ' + val.toStringWithCommas()); */
 				var CountOfRules = val.toStringWithCommas();// в этой переменной храниться количесвто правил
 				// определения правильного падежа для слова правило
-				if((CountOfRules > 4) && (CountOfRules < 21) || (CountOfRules == 0)){
+/* 				if((CountOfRules > 4) && (CountOfRules < 21) || (CountOfRules == 0)){
 					e.text(CountOfRules + ' правил');
 				}
 				else{
 					if(CountOfRules == 1){
 						e.text(CountOfRules + ' правило');
-					}
-					else if(CountOfRules == 0){
-						e.text(CountOfRules + ' правил');
 					}
 					else if((CountOfRules > 1) && (CountOfRules < 5)){
 						e.text(CountOfRules + ' правила');
@@ -296,6 +293,18 @@ function PrefsDialog(remote) {
 					else{
 						e.text(CountOfRules + ' правил')
 					}
+				} */
+				if(((CountOfRules > 4) && (CountOfRules < 21)) || (CountOfRules == 0) || ((CountOfRules > 20) && (CountOfRules % 10 == 0)) || ((CountOfRules > 20) && (CountOfRules % 10 > 5))){
+					e.text(CountOfRules + ' правил');
+				}
+				else if((CountOfRules == 1) || ((CountOfRules > 20) && (CountOfRules % 10 == 1))){
+					e.text(CountOfRules + ' правило');
+				}
+				else if(((CountOfRules > 1) && (CountOfRules < 5)) || ((CountOfRules > 20) && (CountOfRules % 10 < 5))){
+					e.text(CountOfRules + ' правила');
+				}
+				else{
+					e.text(CountOfRules + ' правил')
 				}
 				// конец определения правильного падежа
 			}
