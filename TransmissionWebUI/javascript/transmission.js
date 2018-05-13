@@ -1291,9 +1291,9 @@ Transmission.prototype =
 
 		// build the new html
 		if (!this.filterTracker)
-			str = '<option value="all" selected="selected">All</option>';
+			str = '<option value="all" selected="selected">Все</option>';
 		else
-			str = '<option value="all">All</option>';
+			str = '<option value="all">Все</option>';
 		for (i=0; name=names[i]; ++i) {
 			o = trackers[name];
 			str += '<option value="' + o.domain + '"';

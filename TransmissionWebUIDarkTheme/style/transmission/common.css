@@ -7,7 +7,9 @@ html {
   margin: 0;
   padding: 0;
   height: 100%; }
-
+:focus{
+	outline: none;
+}
 body {
   font: 62.5% "lucida grande", Tahoma, Verdana, Arial, Helvetica, sans-serif;
   /* Resets 1em to 10px */
@@ -122,6 +124,11 @@ div#toolbar {
   #statusbar select#filter-mode, #statusbar select#filter-tracker{
 	  border-radius: 7px;
   }
+  #statusbar select#filter-mode:focus, #statusbar select#filter-tracker:focus{
+	  border-radius: 7px;
+	  border: 1px solid black;
+	  outline: none;
+  }
   #statusbar #filter {
     float: left;
     margin-left: 5px; }
@@ -131,8 +138,11 @@ div#toolbar {
       border-radius: 6px; }
       #statusbar #filter input#torrent_search.blur {
         color: #999;
-		
 		}
+	 #statusbar #filter input#torrent_search:focus{
+		outline:none;
+		border: 1px solid black;
+	 }
     #statusbar #filter #filter-count {
       margin-left: 8px; }
   #statusbar #speed-info {

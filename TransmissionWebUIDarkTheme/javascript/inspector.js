@@ -63,8 +63,21 @@ function Inspector(controller) {
 			name = 'Не выбрано';
 		else if(torrents.length === 1)
 			name = torrents[0].getName();
-		else
-			name = '' + torrents.length+' Transfers Selected';
+		else{
+			if(((torrents.length > 4) && (torrents.length < 21)) || (torrents.length == 0) || ((torrents.length > 20) && (torrents.length % 10 == 0)) || ((torrents.length > 20) && (torrents.length % 10 > 5))){
+				name = torrents.length + ' задач выбранно';
+			}
+			else if((torrents.length == 1) || ((torrents.length > 20) && (torrents.length % 10 == 1))){
+				name = torrents.length + ' задача выбранна';
+			}
+			else if(((torrents.length > 1) && (torrents.length < 5)) || ((torrents.length > 20) && (torrents.length % 10 < 5))){
+				name = torrents.length + ' задачи выбранно';
+			}
+			else{
+				name = torrents.length + ' задача выбранна'
+			}
+			/* name = '' + torrents.length+' Transfers Selected'; */
+		}
 		setTextContent(e.name_lb, name || na);
 
 		// update the visible page
@@ -86,8 +99,8 @@ function Inspector(controller) {
 		var torrents = data.torrents,
 		    e = data.elements,
 		    fmt = Transmission.fmt,
-		    none = 'None',
-		    mixed = 'Mixed',
+		    none = 'Не существует',
+		    mixed = 'Смешано',
 		    unknown = 'Неизвестно',
 		    isMixed, allPaused, allFinished,
 		    str,
@@ -430,10 +443,24 @@ function Inspector(controller) {
 				str = unknown;
 			else if(empty_date && !empty_creator)
 				str = 'Создан с помощью ' + creator;
-			else if(empty_creator && !empty_date)
-				str = 'Создано в ' + (new Date(date*1000)).toDateString();
-			else
-				str = 'Создано с помощью ' + creator + ' в ' + (new Date(date*1000)).toDateString();
+			else if(empty_creator && !empty_date){
+				var options = {
+					  year: 'numeric',
+					  month: 'long',
+					  day: 'numeric',
+					  weekday: 'long',
+				};
+				str = 'Создано в ' + (new Date(date*1000)).toLocaleString("ru", options);
+			}
+			else{
+				var options = {
+					  year: 'numeric',
+					  month: 'long',
+					  day: 'numeric',
+					  weekday: 'long',
+				};
+				str = 'Создано с помощью ' + creator + ' в ' + (new Date(date*1000)).toLocaleString("ru", options);
+			}
 		}
 		setTextContent(e.origin_lb, str);
 

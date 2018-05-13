@@ -370,7 +370,13 @@ Transmission.fmt = (function()
 				}
 			}
 			else{
-				date = myDate.toDateString();
+				var options = {
+					  year: 'numeric',
+					  month: 'long',
+					  day: 'numeric',
+					  weekday: 'long',
+				};
+				date = myDate.toLocaleString("ru", options);;
 			}
 
 			var hours = myDate.getHours();
