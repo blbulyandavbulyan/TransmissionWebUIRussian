@@ -1033,7 +1033,7 @@ Transmission.prototype =
 			var torrent = torrents[0],
 			    header = 'Удалить ' + torrent.getName() + '?',
 			    message = 'После удаления для продолжения передачи потребуется файл торрента. Вы действительно хотите удалить его?';
-			dialog.confirm(header, message, 'Remove', function() {
+			dialog.confirm(header, message, 'Удалить', function() {
 				transmission.removeTorrents(torrents);
 			});
 		}
@@ -1041,7 +1041,7 @@ Transmission.prototype =
 		{
 			var header = 'Удалить ' + torrents.length + '?',
 			    message = 'После удаления для продолжения передачи потребуется файлы торрента. Вы действительно хотите удалить их?';
-			dialog.confirm(header, message, 'Remove', function() {
+			dialog.confirm(header, message, 'Удалить', function() {
 				transmission.removeTorrents(torrents);
 			});
 		}
@@ -1054,7 +1054,7 @@ Transmission.prototype =
 			var torrent = torrents[0],
 			    header = 'Удалить ' + torrent.getName() + ' и удалить его данные',
 			    message = 'Все данные, загруженные для этих торрентов, будут удалены. Вы уверены, что хотите удалить их?';
-			dialog.confirm(header, message, 'Remove', function() {
+			dialog.confirm(header, message, 'Удалить', function() {
 				transmission.removeTorrentsAndData(torrents);
 			});
 		}
@@ -1062,7 +1062,7 @@ Transmission.prototype =
 		{
 			var header = 'Удалить ' + torrents.length + ' из списка и удалить их данные?',
 			    message = 'Все данные, загруженные для этих торрентов, будут удалены. Вы уверены, что хотите удалить их?';
-			dialog.confirm(header, message, 'Remove', function() {
+			dialog.confirm(header, message, 'Удалить', function() {
 				transmission.removeTorrentsAndData(torrents);
 			});
 		}
