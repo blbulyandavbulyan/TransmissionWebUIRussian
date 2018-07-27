@@ -8,25 +8,25 @@
 Transmission.fmt = (function()
 {
 	var speed_K = 1000;
-	var speed_B_str =  'B/s';
-	var speed_K_str = 'kB/s';
-	var speed_M_str = 'MB/s';
-	var speed_G_str = 'GB/s';
-	var speed_T_str = 'TB/s';
+	var speed_B_str =  'Б/с';
+	var speed_K_str = 'кБ/с';
+	var speed_M_str = 'МБ/с';
+	var speed_G_str = 'ГБ/с';
+	var speed_T_str = 'ТБ/с';
 
 	var size_K = 1000;
-	var size_B_str =  'B';
-	var size_K_str = 'kB';
-	var size_M_str = 'MB';
-	var size_G_str = 'GB';
-	var size_T_str = 'TB';
+	var size_B_str =  'Б';
+	var size_K_str = 'кБ';
+	var size_M_str = 'МБ';
+	var size_G_str = 'ГБ';
+	var size_T_str = 'ТБ';
 
 	var mem_K = 1024;
-	var mem_B_str =   'B';
-	var mem_K_str = 'KiB';
-	var mem_M_str = 'MiB';
-	var mem_G_str = 'GiB';
-	var mem_T_str = 'TiB';
+	var mem_B_str =   'Б';
+	var mem_K_str = 'кБ';
+	var mem_M_str = 'МБ';
+	var mem_G_str = 'ГБ';
+	var mem_T_str = 'ТБ';
 
 	return {
 
