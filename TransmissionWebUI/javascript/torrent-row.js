@@ -167,9 +167,9 @@ TorrentRendererFull.prototype =
 				return [ 'Загрузка с',
 				         t.getPeersSendingToUs(),
 				         'из',
-				         fmt.countString('peer','peers',peer_count),
+				         fmt.countString('пира','пиров',peer_count),
 				         'и',
-				         fmt.countString('web seed','web seeds',webseed_count),
+				         fmt.countString('веб сида','веб сидов',webseed_count),
 				         '-',
 				         TorrentRendererHelper.formatDL(t),
 				         TorrentRendererHelper.formatUL(t) ].join(' ');
@@ -177,8 +177,8 @@ TorrentRendererFull.prototype =
 			else if (webseed_count)
 			{
 				// Downloading from 2 webseed(s)
-				return [ 'Downloading from',
-				         fmt.countString('web seed','web seeds',webseed_count),
+				return [ 'Загрузка с',
+				         fmt.countString('веб сида','веб сидов',webseed_count),
 				         '-',
 				         TorrentRendererHelper.formatDL(t),
 				         TorrentRendererHelper.formatUL(t) ].join(' ');
@@ -186,10 +186,10 @@ TorrentRendererFull.prototype =
 			else
 			{
 				// Downloading from 2 of 3 peer(s)
-				return [ 'Downloading from',
+				return [ 'Загрузка с',
 				         t.getPeersSendingToUs(),
-				         'of',
-				         fmt.countString('peer','peers',peer_count),
+				         'из',
+				         fmt.countString('пира','пиров',peer_count),
 				         '-',
 				         TorrentRendererHelper.formatDL(t),
 				         TorrentRendererHelper.formatUL(t) ].join(' ');
@@ -197,10 +197,10 @@ TorrentRendererFull.prototype =
 		}
 
 		if (t.isSeeding())
-			return [ 'Seeding to',
+			return [ 'Отдача',
 			         t.getPeersGettingFromUs(),
-			         'of',
-			         fmt.countString ('peer','peers',t.getPeersConnected()),
+			         'из',
+			         fmt.countString ('пира','пиров',t.getPeersConnected()),
 			         '-',
 			         TorrentRendererHelper.formatUL(t) ].join(' ');
 
@@ -234,7 +234,7 @@ TorrentRendererFull.prototype =
 				c = [ Transmission.fmt.size(totalSize) ];
 			else // partial seed: '127.21 MiB of 698.05 MiB (18.2%)'
 				c = [ Transmission.fmt.size(sizeWhenDone),
-				      ' of ',
+				      ' из ',
 				      Transmission.fmt.size(t.getTotalSize()),
 				      ' (', t.getPercentDoneStr(), '%)' ];
 			// append UL stats: ', uploaded 8.59 GiB (Ratio: 12.3)'
@@ -245,7 +245,7 @@ TorrentRendererFull.prototype =
 			       ')');
 		} else { // not done yet
 			c = [ Transmission.fmt.size(sizeWhenDone - t.getLeftUntilDone()),
-			      ' of ', Transmission.fmt.size(sizeWhenDone),
+			      ' из ', Transmission.fmt.size(sizeWhenDone),
 			      ' (', t.getPercentDoneStr(), '%)' ];
 		}
 
