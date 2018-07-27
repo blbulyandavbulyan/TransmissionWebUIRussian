@@ -253,10 +253,10 @@ Transmission.prototype =
 		{
 			e = $('label#add-dialog-folder-label');
 			if (bytes > 0)
-				str = '  <i>(' + Transmission.fmt.size(bytes) + ' Free)</i>';
+				str = '  <i>(' + Transmission.fmt.size(bytes) + ' Свободно)</i>';
 			else
 				str = '';
-			e.html ('Destination folder' + str + ':');
+			e.html ('Папка для загрузки:' + str + ':');
 		}
 	},
 
@@ -1227,7 +1227,7 @@ Transmission.prototype =
 			limited = o[RPC._DownSpeedLimited];
 
 			e = menu.find('#limited_download_rate');
-			e.html('Limit (' + fmt.speed(limit) + ')');
+			e.html('Лимит (' + fmt.speed(limit) + ')');
 
 			if (!limited)
 				e = menu.find('#unlimited_download_rate');
@@ -1241,7 +1241,7 @@ Transmission.prototype =
 			limited = o[RPC._UpSpeedLimited];
 
 			e = menu.find('#limited_upload_rate');
-			e.html('Limit (' + fmt.speed(limit) + ')');
+			e.html('Лимит (' + fmt.speed(limit) + ')');
 
 			if (!limited)
 				e = menu.find('#unlimited_upload_rate');
@@ -1269,7 +1269,7 @@ Transmission.prototype =
 		$('#speed-dn-label').text( fmt.speedBps( d ) );
 
 		// visible torrents
-		$('#filter-count').text( fmt.countString('Transfer','Transfers',this._rows.length ) );
+		$('#filter-count').text( fmt.countString('Торрент','Торрентов',this._rows.length ) );
 	},
 
 	setEnabled: function(key, flag)
